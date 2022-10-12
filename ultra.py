@@ -1,6 +1,13 @@
 import RPi.GPIO as GPIO
 import time
 
+import http_adn
+import conf
+
+http_adn.crtae(conf.conf['ae']['parent'], conf.conf['ae']['name'], conf.conf['ae']['appid'])
+http_adn.crtct(conf.conf['cnt']['parent'], 'ultrasonic', 0)
+http_adn.crtct(conf.conf['cnt']['parent'], 'servo-motor', 0)
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
@@ -44,6 +51,7 @@ try:
             GPIO.output(BLUE, True)
             GPIO.output(RED, False)
 
+        http_adn.crtci(conf.conf['cnt']['parent'] + '/ultrasonic', distance, None)
         print("Distance : %.1f cm" % distance)
         time.sleep(0.4)
 
