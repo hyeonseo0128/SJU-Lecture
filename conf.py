@@ -1,6 +1,6 @@
 import uuid
 
-host = '203.253.128.161' #'localhost'
+host = 'localhost'
 ae_name = 'SJU'
 protocol = 'http'
 
