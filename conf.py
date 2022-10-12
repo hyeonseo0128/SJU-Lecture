@@ -28,6 +28,11 @@ ae['bodytype'] = 'json'  # select 'json' or 'xml' or 'cbor
 
 cnt['parent'] = ae['parent'] + '/' + ae['name']
 
+conf["usesecure"] = 'disable'
+
+if conf["usesecure"] == 'enable':
+    cse["mqttport"] = '8883'
+
 conf['cse'] = cse
 conf['ae'] = ae
 conf['cnt'] = cnt
