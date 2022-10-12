@@ -44,7 +44,7 @@ try:
 
         check_time = stop - start
         distance = check_time * 34300 / 2
-        if distance < 10:
+        if distance < 50:
             GPIO.output(RED, True)
             GPIO.output(BLUE, False)
         else:
